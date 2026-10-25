@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#200b26" />
+    <title>Donate | Kanakpur SarbaMangla Seba Sangha</title>
+    <meta
+      name="description"
+      content="Celebrate 75 years of Shyama Puja with Kanakpur SarbaMangla Seba Sangha. Programme, festival gallery and directions in English and Bangla."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css?v=10" />
+  </head>
+  <body class="donate-page">
+    <header>
+      <a class="brand" href="index.html"
+        ><span class="brandmark">✺</span
+        ><span data-en="KANAKPUR" data-bn="কনকপুর">KANAKPUR</span
+        ><small data-en="SarbaMangla Seba Sangha" data-bn="সর্বমঙ্গলা সেবা সংঘ"
+          >SarbaMangla Seba Sangha</small
+        ></a
+      >
+      <nav>
+        <a
+          href="index.html"
+          data-en="← Back to the celebration"
+          data-bn="← উৎসবের মূল পৃষ্ঠায় ফিরুন"
+          >← Back to the celebration</a
+        >
+      </nav>
+      <button id="language" aria-label="Switch to Bangla">EN / বাংলা</button>
+    </header>
+    <main id="home">
+      <section class="section donate-intro">
+        <p
+          class="eyebrow"
+          data-en="75 YEARS OF FAITH & TOGETHERNESS"
+          data-bn="৭৫ বছরের ভক্তি ও সম্প্রীতি"
+        >
+          75 YEARS OF FAITH & TOGETHERNESS
+        </p>
+        <h1
+          data-en="A little generosity.<br><em>A brighter celebration.</em>"
+          data-bn="আপনার একটু সহযোগিতায়<br><em>আরও আলোকিত উৎসব।</em>"
+        >
+          A little generosity.<br /><em>A brighter celebration.</em>
+        </h1>
+        <p
+          class="section-intro"
+          data-en="Support Kanakpur SarbaMangla Seba Sangha’s Shyama Puja celebration through the committee’s UPI account."
+          data-bn="কমিটির ইউপিআই অ্যাকাউন্টের মাধ্যমে কনকপুর সর্বমঙ্গলা সেবা সংঘের শ্যামাপূজায় সহযোগিতা করুন।"
+        >
+          Support Kanakpur SarbaMangla Seba Sangha’s Shyama Puja celebration
+          through the committee’s UPI account.
+        </p>
+        <div class="donate-layout">
+          <div class="donation-visual">
+            <img
+              src="assets/hero-kali-four-hands.webp"
+              alt="Illustrative Maa Kali shrine surrounded by festive lamps"
+            />
+            <div>
+              <span>✦</span>
+              <h2
+                data-en="With devotion.<br>With gratitude."
+                data-bn="ভক্তিতে।<br>কৃতজ্ঞতায়।"
+              >
+                With devotion.<br />With gratitude.
+              </h2>
+              <p>কনকপুর সর্বমঙ্গলা সেবা সংঘ</p>
+            </div>
+          </div>
+          <div class="payment-card">
+            <p
+              class="eyebrow"
+              data-en="CONTRIBUTE VIA UPI"
+              data-bn="ইউপিআই-এর মাধ্যমে অনুদান"
+            >
+              CONTRIBUTE VIA UPI
+            </p>
+            <h2 data-en="Your contribution" data-bn="আপনার অনুদান">
+              Your contribution
+            </h2>
+            <div id="payment-status" role="status"></div>
+            <div class="recipient">
+              <span data-en="Recipient" data-bn="প্রাপক">Recipient</span
+              ><strong id="recipient-name"></strong
+              ><span data-en="UPI ID" data-bn="ইউপিআই আইডি">UPI ID</span
+              ><code id="upi-id"></code>
+            </div>
+            <form id="donation-form">
+              <label
+                for="amount"
+                data-en="Choose an amount (₹)"
+                data-bn="অনুদানের পরিমাণ (₹)"
+                >Choose an amount (₹)</label
+              >
+              <div class="amount-options">
+                <button type="button" data-amount="101">₹101</button
+                ><button type="button" data-amount="501">₹501</button
+                ><button type="button" data-amount="1001">₹1,001</button>
+              </div>
+              <input
+                id="amount"
+                name="amount"
+                type="number"
+                min="1"
+                max="100000"
+                step="0.01"
+                inputmode="decimal"
+                value="101"
+                required
+                aria-label="Donation amount in rupees"
+              /><button
+                id="pay-button"
+                class="button primary"
+                type="submit"
+                disabled
+                data-en="Open UPI app ↗"
+                data-bn="ইউপিআই অ্যাপ খুলুন ↗"
+              >
+                Open UPI app ↗</button
+              ><button
+                id="copy-upi"
+                class="button secondary"
+                type="button"
+                disabled
+                data-en="Copy UPI ID"
+                data-bn="ইউপিআই আইডি কপি করুন"
+              >
+                Copy UPI ID
+              </button>
+            </form>
+            <div id="qr-wrap" hidden>
+              <img id="payment-qr" alt="Committee supplied UPI payment QR" />
+              <p
+                data-en="Scan with your UPI app. Check the recipient name before paying."
+                data-bn="ইউপিআই অ্যাপ দিয়ে স্ক্যান করুন। অনুদানের আগে প্রাপকের নাম মিলিয়ে নিন।"
+              >
+                Scan with your UPI app. Check the recipient name before paying.
+              </p>
+            </div>
+            <p
+              class="payment-help"
+              data-en="On a phone, the payment link can open a compatible UPI app. On a computer, use the UPI ID or the committee’s QR code when available. Confirm the recipient and amount in your payment app. This website does not collect a UPI PIN or verify payment completion."
+              data-bn="ফোনে এই লিঙ্ক থেকে উপযুক্ত ইউপিআই অ্যাপ খুলতে পারে। কম্পিউটারে ইউপিআই আইডি বা কমিটির কিউআর কোড ব্যবহার করুন। পেমেন্ট অ্যাপে প্রাপক ও পরিমাণ মিলিয়ে নিন। এই ওয়েবসাইট ইউপিআই পিন সংগ্রহ করে না বা পেমেন্ট সম্পন্ন হয়েছে কি না যাচাই করে না।"
+            >
+              On a phone, the payment link can open a compatible UPI app. On a
+              computer, use the UPI ID or the committee’s QR code when
+              available. Confirm the recipient and amount in your payment app.
+              This website does not collect a UPI PIN or verify payment
+              completion.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="grand-footer">
+      <div class="footer-top">
+        <div class="footer-identity">
+          <span class="footer-emblem">✺</span>
+          <h3
+            data-en="Kanakpur<br>SarbaMangla Seba Sangha"
+            data-bn="কনকপুর<br>সর্বমঙ্গলা সেবা সংঘ"
+          >
+            Kanakpur<br />SarbaMangla Seba Sangha
+          </h3>
+          <p
+            data-en="75 years of devotion.<br>A celebration that brings us together."
+            data-bn="৭৫ বছরের আরাধনা।<br>যে উৎসবে আমরা একসঙ্গে।"
+          >
+            75 years of devotion.<br />A celebration that brings us together.
+          </p>
+          <p
+            class="registration"
+            data-en="Established 1952 · Reg. S/65935"
+            data-bn="প্রতিষ্ঠিত ১৯৫২ · রেজি এস / ৬৫৯৩৫"
+          >
+            Established 1952 · Reg. S/65935
+          </p>
+        </div>
+        <div>
+          <h4 data-en="EXPLORE THE FESTIVAL" data-bn="উৎসবের আরও কথা">
+            EXPLORE THE FESTIVAL
+          </h4>
+          <a
+            href="index.html#mahavidya"
+            data-en="Dasha Mahavidya"
+            data-bn="দশমহাবিদ্যা"
+            >Dasha Mahavidya</a
+          ><a
+            href="index.html#programme"
+            data-en="Programme · 8–14 November"
+            data-bn="অনুষ্ঠানসূচি · ৮–১৪ নভেম্বর"
+            >Programme · 8–14 November</a
+          ><a
+            href="index.html#gallery"
+            data-en="Festival gallery"
+            data-bn="উৎসবের ছবিঘর"
+            >Festival gallery</a
+          ><a
+            href="index.html#past-puja"
+            data-en="Past puja memories"
+            data-bn="বিগত পূজার স্মৃতি"
+            >Past puja memories</a
+          >
+        </div>
+        <div>
+          <h4 data-en="OUR COMMUNITY" data-bn="আমাদের পরিবার">OUR COMMUNITY</h4>
+          <a
+            href="index.html#people"
+            data-en="Organisers & members"
+            data-bn="আয়োজক ও সদস্যবৃন্দ"
+            >Organisers & members</a
+          ><a
+            href="donate.html"
+            data-en="Support the celebration ↗"
+            data-bn="উৎসবে সহযোগিতা করুন ↗"
+            >Support the celebration ↗</a
+          ><a
+            href="assets/programme-poster-2026.jpg"
+            target="_blank"
+            rel="noopener"
+            data-en="Official programme poster"
+            data-bn="অনুষ্ঠানসূচির মূল পোস্টার"
+            >Official programme poster</a
+          >
+        </div>
+        <div>
+          <h4 data-en="COME CELEBRATE WITH US" data-bn="আসুন আমাদের উৎসবে">
+            COME CELEBRATE WITH US
+          </h4>
+          <p
+            data-en="3FFW+46Q, Kanakpur<br>Patashpur, Purba Medinipur<br>West Bengal 721439"
+            data-bn="3FFW+46Q, কনকপুর<br>পটাশপুর, পূর্ব মেদিনীপুর<br>পশ্চিমবঙ্গ ৭২১৪৩৯"
+          >
+            3FFW+46Q, Kanakpur<br />Patashpur, Purba Medinipur<br />West Bengal
+            721439
+          </p>
+          <a
+            class="footer-directions"
+            href="https://www.google.com/maps/dir/?api=1&destination=3FFW%2B46Q%2C%20Kanakpur%2C%20West%20Bengal%20721439"
+            target="_blank"
+            rel="noopener"
+            data-en="Get directions ↗"
+            data-bn="আসার পথ দেখুন ↗"
+            >Get directions ↗</a
+          >
+        </div>
+      </div>
+      <div class="footer-blessing">
+        শুভ শ্যামাপূজা &nbsp; ✦ &nbsp; শুভ দীপাবলি
+      </div>
+      <div class="footer-bottom">
+        <span
+          data-en="© 2026 Kanakpur SarbaMangla Seba Sangha"
+          data-bn="© ২০২৬ কনকপুর সর্বমঙ্গলা সেবা সংঘ"
+          >© 2026 Kanakpur SarbaMangla Seba Sangha</span
+        ><span
+          data-en="Faith · Light · Togetherness"
+          data-bn="ভক্তি · আলো · সম্প্রীতি"
+          >Faith · Light · Togetherness</span
+        ><a href="#home" data-en="Back to top ↑" data-bn="উপরে ফিরুন ↑"
+          >Back to top ↑</a
+        >
+      </div>
+    </footer>
+    <button class="motion" id="motion" aria-pressed="false">
+      Ⅱ Pause effects
+    </button>
+    <script src="data.js?v=6"></script>
+    <script src="donate.js"></script>
+    <script src="ambience.js?v=8"></script>
+  </body>
+</html>

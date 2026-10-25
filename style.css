@@ -1,0 +1,2910 @@
+:root {
+  --bg: #1c0b22;
+  --gold: #edc377;
+  --text: #f8ecdc;
+  --muted: #c5b1bf;
+  --line: #ffffff20;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, "Noto Sans Bengali", sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  font: inherit;
+  cursor: pointer;
+  color: inherit;
+}
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 5px;
+}
+header {
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5.5%;
+  border-bottom: 1px solid var(--line);
+  background: #1c0b22f5;
+  position: relative;
+  z-index: 10;
+}
+.brand {
+  display: grid;
+  grid-template-columns: 46px auto;
+  font-size: 16px;
+  letter-spacing: 3px;
+  line-height: 1.4;
+}
+.brandmark {
+  grid-row: span 2;
+  font-size: 38px;
+  color: var(--gold);
+}
+.brand small {
+  font-size: 10px;
+  letter-spacing: 0.6px;
+  color: var(--muted);
+}
+nav {
+  display: flex;
+  gap: 32px;
+  font-size: 12px;
+}
+nav a:hover {
+  color: var(--gold);
+}
+#language {
+  background: none;
+  border: 1px solid #b8865555;
+  border-radius: 5px;
+  padding: 9px 13px;
+  font-size: 12px;
+}
+#language span {
+  color: var(--gold);
+}
+.hero {
+  position: relative;
+  min-height: 780px;
+  overflow: hidden;
+  isolation: isolate;
+  perspective: 1000px;
+}
+.hero-art {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      #1c0b22 2%,
+      #1c0b22ee 24%,
+      #1c0b2290 44%,
+      transparent 70%
+    ),
+    linear-gradient(0deg, #1c0b22, transparent 28%),
+    url("assets/puja.webp") right center/auto 110% no-repeat;
+  z-index: -2;
+  transform: scale(1.03);
+  transition: transform 0.3s ease-out;
+}
+#sparks {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+.hero-content {
+  padding: 86px 0 120px 6%;
+  max-width: 720px;
+}
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 2.3px;
+  color: var(--gold);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.eyebrow i {
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  border-radius: 100%;
+  box-shadow: 0 0 12px var(--gold);
+}
+.bengali-greeting {
+  font-family: "Noto Sans Bengali", sans-serif;
+  color: #e5b87b;
+  margin: 24px 0 14px;
+  font-size: 17px;
+}
+h1,
+h2,
+blockquote {
+  font-family: "Cormorant Garamond", "Noto Sans Bengali", serif;
+  font-weight: 500;
+  line-height: 1.05;
+  margin: 0;
+}
+h1 {
+  font-size: 74px;
+  letter-spacing: -2px;
+}
+em {
+  font-weight: 400;
+  color: var(--gold);
+}
+.intro {
+  max-width: 430px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+  margin: 24px 0 28px;
+}
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 13px 22px;
+  font-size: 11px;
+  font-weight: 600;
+  transition:
+    transform 0.2s,
+    background 0.2s;
+}
+.button:hover {
+  transform: translateY(-3px);
+}
+.primary {
+  background: var(--gold);
+  color: #2c1325;
+  border: 1px solid var(--gold);
+}
+.secondary {
+  background: #22102666;
+  border: 1px solid #e8bd7166;
+}
+.hero-location {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+  color: var(--muted);
+  font-size: 10px;
+  margin-top: 28px;
+}
+.hero-location > span:first-child {
+  font-size: 21px;
+  color: var(--gold);
+}
+.hero-location b {
+  font-size: 8px;
+  color: var(--gold);
+}
+.jubilee {
+  position: absolute;
+  right: 5%;
+  bottom: 84px;
+  width: 174px;
+  height: 174px;
+  border: 1px solid #edc37788;
+  border-radius: 50%;
+  background: #290d28b3;
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow:
+    0 15px 60px #0008,
+    inset 0 0 0 7px #edc37712;
+  transform: rotate(7deg);
+}
+.jubilee strong {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 90px;
+  line-height: 1;
+  color: var(--gold);
+  text-shadow:
+    2px 3px #7d453b,
+    4px 6px #220a21;
+}
+.jubilee span,
+.jubilee small {
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: var(--gold);
+}
+.art-label {
+  position: absolute;
+  bottom: 17px;
+  right: 22px;
+  font-size: 9px;
+  color: #d6bec5;
+}
+.scroll {
+  position: absolute;
+  bottom: 30px;
+  left: 6%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--gold);
+  font-size: 24px;
+}
+.scroll span {
+  font-size: 8px;
+  letter-spacing: 2px;
+}
+.ribbon {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 24px;
+  background: #a53939;
+  padding: 17px 25px;
+  color: #ffdda0;
+  font-size: 11px;
+  letter-spacing: 2px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.section {
+  padding: 95px 7%;
+  max-width: 1500px;
+  margin: auto;
+}
+h2 {
+  font-size: 53px;
+  line-height: 1.1;
+}
+h3 {
+  font-size: 17px;
+  font-weight: 500;
+}
+.story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9%;
+  align-items: center;
+}
+.story p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+  max-width: 470px;
+}
+.story blockquote {
+  font-size: 27px;
+  color: var(--gold);
+  border-left: 2px solid #a74b4c;
+  padding: 4px 0 4px 22px;
+  margin: 30px 0;
+}
+.text-link {
+  font-size: 12px;
+  color: var(--gold);
+  border-bottom: 1px solid #edc37744;
+  padding-bottom: 5px;
+}
+.story-art {
+  position: relative;
+  min-height: 400px;
+  display: grid;
+  place-items: center;
+  perspective: 700px;
+}
+.mandala {
+  position: absolute;
+  font-size: 430px;
+  line-height: 1;
+  color: #cf9c5740;
+  animation: spin 110s linear infinite;
+}
+.anniversary {
+  z-index: 1;
+  text-align: center;
+  background: radial-gradient(ellipse, #32152f 25%, #32152f00 70%);
+  transform: rotateY(-10deg);
+}
+.anniversary span {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--gold);
+}
+.anniversary strong {
+  display: block;
+  font-family: "Noto Sans Bengali", sans-serif;
+  font-size: 135px;
+  color: var(--gold);
+  line-height: 1.5;
+  text-shadow:
+    2px 2px #a86c40,
+    5px 7px #784430,
+    9px 13px #080309;
+  transform: translateZ(30px);
+}
+.anniversary p {
+  margin: 0 !important;
+  font-size: 10px !important;
+  letter-spacing: 2px;
+}
+.diya {
+  position: absolute;
+  bottom: 0;
+  width: 105px;
+  height: 30px;
+  border-radius: 5px 5px 80% 80%;
+  background: linear-gradient(#ecb74f, #90371e);
+  box-shadow: 0 -15px 70px #f3a92660;
+}
+.diya i {
+  display: block;
+  position: absolute;
+  top: -45px;
+  left: 42px;
+  width: 21px;
+  height: 48px;
+  background: linear-gradient(#fff8c0, #ffb526);
+  border-radius: 90% 5% 80% 30%;
+  transform: rotate(-15deg);
+  box-shadow: 0 0 35px #ffb526;
+  animation: flicker 2s ease-in-out infinite alternate;
+}
+.programme {
+  background: #28102c;
+  max-width: none;
+}
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+.pill {
+  border: 1px solid #edc37744;
+  border-radius: 30px;
+  padding: 7px 15px;
+  font-size: 10px;
+  color: var(--gold);
+}
+.notice {
+  max-width: 800px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin: 28px 0;
+}
+.tabs button {
+  padding: 9px 19px;
+  border: 1px solid var(--line);
+  background: none;
+  border-radius: 25px;
+  font-size: 11px;
+}
+.tabs button[aria-selected="true"] {
+  background: var(--gold);
+  color: #29132c;
+  border-color: var(--gold);
+}
+.events article {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 26px 0;
+  border-top: 1px solid var(--line);
+}
+.events article[hidden] {
+  display: none;
+}
+.event-icon {
+  font-size: 26px;
+  color: var(--gold);
+  border: 1px solid #edc37733;
+  border-radius: 50%;
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.events small {
+  color: #e5a16d;
+  font-size: 8px;
+  letter-spacing: 2px;
+}
+.events h3 {
+  margin: 4px 0;
+}
+.events p {
+  color: var(--muted);
+  font-size: 11px;
+  margin: 0;
+}
+.time {
+  margin-left: auto;
+  color: var(--gold);
+  font-size: 11px;
+}
+.gallery-tip {
+  font-size: 11px;
+  color: var(--gold);
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 0.85fr;
+  gap: 18px;
+}
+.photo {
+  position: relative;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  height: 330px;
+  border-radius: 6px;
+  background: #32182f;
+  text-align: left;
+}
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s;
+}
+.photo1 img {
+  object-position: 87% center;
+  width: 150%;
+  max-width: none;
+  transform: translateX(-30%);
+}
+.photo2 img {
+  width: 270%;
+  height: 210%;
+  object-fit: cover;
+  max-width: none;
+  transform: translate(-55%, -48%);
+}
+.photo1:hover img {
+  transform: translateX(-30%) scale(1.05);
+}
+.photo2:hover img {
+  transform: translate(-55%, -48%) scale(1.05);
+}
+.photo span {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 45px 22px 20px;
+  background: linear-gradient(transparent, #160816);
+  font-size: 13px;
+}
+.gallery-note {
+  border: 1px solid var(--line);
+  padding: 28px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.gallery-note > span {
+  font-size: 40px;
+  color: var(--gold);
+}
+.gallery-note h3 {
+  font-family: "Cormorant Garamond", "Noto Sans Bengali", serif;
+  font-size: 27px;
+  margin: 10px 0;
+}
+.gallery-note p {
+  font-size: 12px;
+  color: var(--muted);
+}
+.gallery-note small {
+  font-size: 9px;
+  color: #bc9ea8;
+}
+.visit {
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 7%;
+  align-items: center;
+}
+.visit h3 {
+  font-size: 14px;
+  margin-top: 30px;
+}
+.visit p {
+  color: var(--muted);
+  font-size: 13px;
+}
+.street {
+  display: inline-block;
+  margin-top: 22px;
+}
+.map-wrap {
+  border: 1px solid #edc37744;
+  border-radius: 7px;
+  overflow: hidden;
+  background: #2a182d;
+}
+.map-wrap iframe {
+  width: 100%;
+  height: 360px;
+  border: 0;
+  display: block;
+}
+.map-caption {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 20px;
+  font-size: 9px;
+  color: var(--gold);
+}
+.closing {
+  padding: 75px 20px;
+  text-align: center;
+  background: radial-gradient(ellipse at bottom, #682333 0, #29112d 65%);
+  border-top: 1px solid var(--line);
+}
+.closing > p {
+  color: var(--gold);
+  font-size: 14px;
+}
+.closing h2 {
+  font-size: 50px;
+  margin: 25px 0 30px;
+}
+.closing a {
+  font-size: 11px;
+  color: var(--gold);
+}
+footer {
+  padding: 24px 6%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: #a68a9c;
+  font-size: 9px;
+}
+.motion {
+  position: fixed;
+  bottom: 12px;
+  left: 12px;
+  z-index: 12;
+  border: 1px solid #edc37744;
+  background: #201022dd;
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 9px;
+  color: var(--gold);
+}
+dialog {
+  border: 1px solid var(--gold);
+  background: var(--bg);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 12px;
+  max-width: 90vw;
+  width: 1000px;
+}
+dialog::backdrop {
+  background: #09020de6;
+}
+dialog img {
+  width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+}
+dialog p {
+  text-align: center;
+  margin: 6px;
+}
+#close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  background: var(--bg);
+  width: 36px;
+  height: 36px;
+}
+.paused * {
+  animation-play-state: paused !important;
+}
+.paused .hero-art {
+  transform: none !important;
+}
+html[lang="bn"] h1 {
+  font-size: 53px;
+  line-height: 1.45;
+  letter-spacing: 0;
+}
+html[lang="bn"] h2 {
+  font-size: 38px;
+  line-height: 1.5;
+}
+html[lang="bn"] em {
+  font-style: normal;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes flicker {
+  to {
+    transform: rotate(-8deg) scale(0.94, 1.07);
+  }
+}
+@media (min-width: 1500px) {
+  .hero-art {
+    background-size: auto, auto, cover;
+  }
+  .hero-content {
+    margin-left: 3%;
+  }
+}
+@media (max-width: 1000px) {
+  nav {
+    gap: 18px;
+  }
+  .hero-content {
+    max-width: 620px;
+  }
+  h1 {
+    font-size: 64px;
+  }
+  .hero-art {
+    opacity: 0.75;
+    background-position:
+      center,
+      center,
+      65% center;
+  }
+  .jubilee {
+    width: 135px;
+    height: 135px;
+    right: 3%;
+    bottom: 70px;
+  }
+  .jubilee strong {
+    font-size: 70px;
+  }
+  .jubilee span,
+  .jubilee small {
+    font-size: 6px;
+  }
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .gallery-note {
+    grid-column: span 2;
+    display: block;
+  }
+  .story {
+    gap: 5%;
+  }
+  h2 {
+    font-size: 44px;
+  }
+  .mandala {
+    font-size: 340px;
+  }
+  .anniversary strong {
+    font-size: 110px;
+  }
+}
+@media (max-width: 700px) {
+  header {
+    height: auto;
+    min-height: 85px;
+    padding: 16px 5%;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .brand {
+    font-size: 13px;
+    grid-template-columns: 37px auto;
+  }
+  .brandmark {
+    font-size: 30px;
+  }
+  nav {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 10px;
+  }
+  .hero {
+    min-height: 850px;
+  }
+  .hero-content {
+    padding: 220px 6% 100px;
+  }
+  .hero-art {
+    background:
+      linear-gradient(0deg, #1c0b22 4%, #1c0b22e8 41%, #1c0b2220 85%),
+      url("assets/puja.webp") 77% top/auto 70% no-repeat;
+    opacity: 1;
+  }
+  h1 {
+    font-size: 53px;
+    letter-spacing: -1px;
+  }
+  .eyebrow {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+  .bengali-greeting {
+    font-size: 14px;
+  }
+  .intro {
+    font-size: 12px;
+  }
+  .jubilee {
+    width: 105px;
+    height: 105px;
+    top: 25px;
+    right: 20px;
+  }
+  .jubilee strong {
+    font-size: 53px;
+  }
+  .jubilee span,
+  .jubilee small {
+    font-size: 5px;
+    letter-spacing: 1px;
+  }
+  .hero-location {
+    font-size: 9px;
+    gap: 8px;
+  }
+  .ribbon {
+    justify-content: flex-start;
+    font-size: 9px;
+    gap: 20px;
+  }
+  .section {
+    padding: 60px 6%;
+  }
+  .story {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+  .story-art {
+    min-height: 300px;
+  }
+  .mandala {
+    font-size: 330px;
+  }
+  .anniversary strong {
+    font-size: 100px;
+  }
+  h2 {
+    font-size: 41px;
+  }
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .events article {
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .event-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 22px;
+  }
+  .events h3 {
+    font-size: 14px;
+  }
+  .time {
+    margin-left: 56px;
+  }
+  .gallery-grid {
+    gap: 12px;
+  }
+  .photo {
+    height: 260px;
+  }
+  .gallery-note {
+    padding: 22px;
+  }
+  .visit {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .map-wrap iframe {
+    height: 300px;
+  }
+  .map-caption {
+    font-size: 8px;
+    padding: 12px;
+  }
+  .closing h2 {
+    font-size: 38px;
+  }
+  footer {
+    flex-direction: column;
+    gap: 4px;
+    padding-bottom: 55px;
+  }
+  html[lang="bn"] h1 {
+    font-size: 37px;
+  }
+  html[lang="bn"] h2 {
+    font-size: 30px;
+  }
+  .art-label {
+    font-size: 7px;
+  }
+  .tabs button {
+    font-size: 10px;
+    padding: 8px 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+/* Version 2 — wide hero, devotional collection and editable albums */
+header {
+  gap: 20px;
+}
+nav {
+  gap: 19px;
+  font-size: 11px;
+}
+.hero-art {
+  background:
+    linear-gradient(
+      90deg,
+      #1c0b22 0%,
+      #1c0b22e8 26%,
+      #1c0b2270 48%,
+      transparent 74%
+    ),
+    linear-gradient(0deg, #1c0b22, transparent 25%),
+    url("assets/puja.webp") right center/auto 85% no-repeat;
+  transform: none;
+}
+.hero {
+  min-height: 820px;
+}
+.hero-content {
+  padding-bottom: 150px;
+}
+.jubilee {
+  bottom: 110px;
+}
+.scroll {
+  bottom: 52px;
+}
+.diya-row {
+  position: absolute;
+  bottom: 12px;
+  left: 4%;
+  right: 4%;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  height: 60px;
+  z-index: 1;
+}
+.diya-row .diya {
+  position: relative;
+  bottom: auto;
+  align-self: flex-end;
+  width: 65px;
+  height: 18px;
+  box-shadow: 0 -12px 45px #f3a92660;
+  animation: lamp-glow 3s var(--delay) infinite alternate;
+}
+.diya-row .diya i {
+  left: 27px;
+  top: -30px;
+  width: 12px;
+  height: 32px;
+  animation-delay: var(--delay);
+}
+.art-label {
+  bottom: 2px;
+  font-size: 8px;
+  z-index: 2;
+}
+#sparks {
+  z-index: -1;
+}
+.mahavidya {
+  background: radial-gradient(ellipse at top, #442038, #1c0b22 65%);
+  max-width: none;
+  border-bottom: 1px solid var(--line);
+}
+.section-intro {
+  font-size: 14px;
+  color: var(--muted);
+  max-width: 760px;
+  line-height: 1.9;
+}
+.art-disclosure {
+  font-size: 10px;
+  color: #b79aaa;
+  max-width: 820px;
+}
+.forms-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 22px;
+  margin: 35px 0;
+}
+.form-card {
+  padding: 0;
+  border: 1px solid #edc37740;
+  background: #2d142d;
+  border-radius: 100px 100px 9px 9px;
+  overflow: hidden;
+  text-align: left;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+.form-card:hover {
+  transform: translateY(-7px) rotateY(4deg);
+  box-shadow: 0 16px 35px #0006;
+}
+.form-image {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  background: #241124;
+}
+.form-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.form-image small {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+  background: #210a23c9;
+  color: var(--gold);
+  border-radius: 20px;
+  padding: 3px 10px;
+  font-size: 10px;
+}
+.form-card h3 {
+  font-size: 13px;
+  padding: 15px 12px;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+.form-card h3 span {
+  color: var(--gold);
+}
+.time strong,
+.time span {
+  display: block;
+  font-size: 11px;
+  font-weight: 400;
+}
+.time strong {
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.gallery-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.photo img {
+  object-position: center;
+}
+.photo {
+  width: 100%;
+}
+.gallery-grid > .photo:only-child {
+  grid-column: span 2;
+  height: 420px;
+}
+.gallery-grid > .photo:only-child img {
+  object-fit: contain;
+  background: #231126;
+}
+.past-puja {
+  border-top: 1px solid var(--line);
+  background: #29102b;
+  max-width: none;
+}
+.past-grid {
+  display: grid;
+  gap: 32px;
+}
+.empty-state {
+  padding: 35px;
+  border: 1px dashed #edc37744;
+  border-radius: 8px;
+  width: 100%;
+  grid-column: 1/-1;
+  background: #edc37704;
+}
+.empty-state > span {
+  font-size: 34px;
+  color: var(--gold);
+}
+.empty-state h3 {
+  font-family: "Cormorant Garamond", "Noto Sans Bengali", serif;
+  font-size: 28px;
+  margin: 7px 0;
+}
+.empty-state p {
+  font-size: 12px;
+  color: var(--muted);
+  max-width: 650px;
+}
+.album-heading {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.album-heading > span {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 48px;
+  color: var(--gold);
+}
+.album-heading h3 {
+  margin: 0;
+}
+.album-heading p {
+  margin: 5px 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+.album-photos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.tabs button[aria-pressed="true"] {
+  background: var(--gold);
+  color: #29132c;
+}
+.group-heading {
+  margin: 35px 0 18px;
+  color: var(--gold);
+}
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.person {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  padding: 22px;
+  background: #2b142f;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.person-avatar {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.initials {
+  display: grid;
+  place-items: center;
+  background: #653545;
+  color: var(--gold);
+  font-size: 30px;
+}
+.person h3 {
+  margin: 0;
+  font-size: 15px;
+}
+.person p {
+  margin: 6px 0 0;
+  font-size: 11px;
+  color: var(--gold);
+}
+.image-error {
+  padding: 20px;
+  font-size: 12px;
+  color: var(--gold);
+}
+@keyframes lamp-glow {
+  to {
+    filter: brightness(1.2);
+    box-shadow: 0 -15px 65px #f3a92680;
+  }
+}
+@media (min-width: 1500px) {
+  .hero-art {
+    background-size:
+      auto,
+      auto,
+      auto 90%;
+  }
+}
+@media (max-width: 1100px) {
+  nav {
+    gap: 11px;
+  }
+  .forms-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .people-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 700px) {
+  nav {
+    overflow: auto;
+    justify-content: flex-start;
+    gap: 20px;
+    white-space: nowrap;
+    padding-bottom: 3px;
+    width: 100%;
+  }
+  .hero {
+    min-height: 930px;
+  }
+  .hero-art {
+    background:
+      linear-gradient(0deg, #1c0b22 0%, #1c0b22ee 47%, transparent 80%),
+      url("assets/puja.webp") center top/100% auto no-repeat;
+  }
+  .hero-content {
+    padding-top: 260px;
+    padding-bottom: 150px;
+  }
+  .jubilee {
+    top: 18px;
+    bottom: auto;
+    width: 90px;
+    height: 90px;
+  }
+  .jubilee strong {
+    font-size: 45px;
+  }
+  .diya-row .diya:nth-child(even) {
+    display: none;
+  }
+  .diya-row {
+    bottom: 12px;
+  }
+  .scroll {
+    bottom: 65px;
+  }
+  .forms-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+  .form-card h3 {
+    font-size: 12px;
+    padding: 12px;
+  }
+  .section-intro {
+    font-size: 12px;
+  }
+  .gallery-grid,
+  .album-photos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .gallery-grid > .photo:only-child {
+    height: 280px;
+  }
+  .people-grid {
+    grid-template-columns: 1fr;
+  }
+  .empty-state {
+    padding: 24px;
+  }
+  .time {
+    margin-left: 56px;
+  }
+  .tabs {
+    overflow: auto;
+  }
+  .person-avatar {
+    width: 64px;
+    height: 64px;
+  }
+  .form-card:hover {
+    transform: none;
+  }
+}
+.form-image img {
+  object-fit: contain;
+}
+.hero-art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    #1c0b22 0%,
+    transparent 18%,
+    transparent 85%,
+    #1c0b22 100%
+  );
+  pointer-events: none;
+}
+
+.registration {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+.festival-dates {
+  font-size: 11px;
+  color: var(--gold);
+  letter-spacing: 2px;
+  margin-bottom: 0;
+}
+.poster-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin: 24px 0;
+}
+.time {
+  max-width: 290px;
+}
+.time strong {
+  line-height: 1.7;
+}
+footer {
+  flex-wrap: wrap;
+}
+.events article > div:not(.time) {
+  max-width: 60%;
+}
+@media (max-width: 700px) {
+  .events article > div:not(.time) {
+    max-width: calc(100% - 60px);
+  }
+  .time {
+    max-width: none;
+  }
+  .hero {
+    min-height: 970px;
+  }
+}
+/* V3: immersive layered scenery, donation page and community footer. */
+.hero-art {
+  background:
+    linear-gradient(
+      90deg,
+      #1c0b22 0%,
+      #1c0b22e8 25%,
+      #1c0b2260 48%,
+      transparent 74%
+    ),
+    linear-gradient(0deg, #1c0b22, transparent 25%),
+    url("assets/hero-kali-four-hands.webp") right center/auto 100% no-repeat;
+}
+.hero-art::after {
+  background: linear-gradient(
+    180deg,
+    #1c0b2266,
+    transparent 15%,
+    transparent 88%,
+    #1c0b22
+  );
+}
+nav {
+  gap: 14px;
+}
+.nav-donate {
+  padding: 7px 13px;
+  border: 1px solid #eabf7970;
+  border-radius: 20px;
+  color: var(--gold);
+}
+.scene-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  perspective: 1400px;
+}
+.scene-decoration {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 88% 15%, #ae3c6a20, transparent 55%),
+    linear-gradient(125deg, #1c0b2200, #372c6f22);
+}
+.scene-photo {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, #1c0b22 15%, #1c0b22cc 55%, #1c0b2270),
+    url("assets/hero-kali-four-hands.webp") right center/auto 110% no-repeat;
+  opacity: 0.15;
+  animation: scene-drift 24s ease-in-out infinite alternate;
+  transform-origin: right;
+}
+.scene-mandala {
+  position: absolute;
+  right: -120px;
+  top: 12%;
+  font-size: 530px;
+  line-height: 1;
+  color: #e9bc6f0c;
+  transform-style: preserve-3d;
+  animation: mandala-depth 75s linear infinite;
+}
+.hanging-lamp {
+  position: absolute;
+  top: -15px;
+  color: #d3a7566b;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transform-origin: top;
+  animation: lamp-sway 6s ease-in-out infinite alternate;
+}
+.hanging-lamp:before {
+  content: "";
+  width: 1px;
+  height: 85px;
+  background: linear-gradient(transparent, #b88b4c);
+}
+.hanging-lamp span {
+  font-size: 48px;
+  line-height: 1;
+}
+.hanging-lamp i {
+  height: 9px;
+  width: 20px;
+  border-radius: 50%;
+  background: #eeb35c;
+  box-shadow: 0 0 30px 8px #f1b24c40;
+  animation: flicker 2s infinite alternate;
+}
+.lamp-left {
+  left: 15px;
+}
+.lamp-right {
+  right: 17px;
+  animation-delay: -3s;
+  top: 60px;
+}
+.floating-petals {
+  position: absolute;
+  bottom: 5%;
+  left: 7%;
+  color: #efab6a30;
+  font-size: 50px;
+  letter-spacing: 90px;
+  animation: petal-rise 16s ease-in-out infinite alternate;
+}
+.festival-fireworks {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 11;
+}
+.form-card,
+.person,
+.payment-card,
+.album {
+  transition:
+    transform 0.2s,
+    box-shadow 0.3s;
+  transform-style: preserve-3d;
+  box-shadow:
+    0 14px 35px #0002,
+    0 1px #f1cd7b20 inset;
+}
+.form-card:hover,
+.person:hover {
+  box-shadow:
+    0 24px 50px #0005,
+    0 0 22px #e9ad6320;
+}
+.events article {
+  transition:
+    background 0.25s,
+    transform 0.25s;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+.events article:hover {
+  background: #5d2c4420;
+  transform: translateX(4px);
+}
+.donation-section {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 70px;
+  align-items: center;
+  border-top: 1px solid var(--line);
+  padding-top: 110px;
+  padding-bottom: 110px;
+}
+.donation-art {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 290px;
+  perspective: 900px;
+}
+.donation-heart {
+  font-family: serif;
+  font-size: 150px;
+  color: var(--gold);
+  text-shadow:
+    2px 2px #92613d,
+    5px 5px #56334a,
+    0 0 70px #edb55660;
+  animation: heart-float 5s ease-in-out infinite;
+}
+.donation-orbit {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border: 1px solid #e7bb6e60;
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 40px #b43e7730,
+    0 0 30px #bb794b20;
+  transform: rotateX(55deg) rotateZ(-25deg);
+  animation: orbit 18s linear infinite;
+}
+.donation-art .diya {
+  bottom: 0;
+}
+.grand-footer {
+  display: block;
+  padding: 72px 7% 24px;
+  background:
+    radial-gradient(ellipse at 15% 0%, #57233e55, transparent 60%), #14091b;
+  border-top: 1px solid #e1b46d55;
+  position: relative;
+  overflow: hidden;
+}
+.grand-footer:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 5%;
+  right: 5%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #e9bf77, transparent);
+  box-shadow: 0 0 35px #dfb76b;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1.3fr;
+  gap: 35px;
+}
+.footer-emblem {
+  font-size: 44px;
+  color: var(--gold);
+  line-height: 1;
+}
+.footer-identity h3 {
+  font-family: "Cormorant Garamond", "Noto Sans Bengali", serif;
+  font-size: 27px;
+  line-height: 1.25;
+  margin: 15px 0;
+  color: var(--text);
+}
+.grand-footer p {
+  font-size: 11px;
+  line-height: 1.9;
+  color: var(--muted);
+}
+.grand-footer h4 {
+  font-size: 9px;
+  letter-spacing: 1.8px;
+  color: var(--gold);
+  margin: 10px 0 24px;
+}
+.footer-top a {
+  display: block;
+  font-size: 11px;
+  margin: 11px 0;
+  color: #d9c3cf;
+}
+.footer-top a:hover {
+  color: var(--gold);
+}
+.footer-top .footer-directions {
+  color: var(--gold);
+  display: inline-block;
+  border-bottom: 1px solid #edc37755;
+}
+.footer-blessing {
+  text-align: center;
+  color: var(--gold);
+  font-family: "Noto Sans Bengali", sans-serif;
+  font-size: 18px;
+  padding: 38px 0 28px;
+  margin-top: 30px;
+  border-top: 1px solid var(--line);
+}
+.footer-bottom {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  font-size: 9px;
+}
+.footer-bottom a {
+  color: var(--gold);
+}
+.donate-intro {
+  max-width: 1400px;
+  padding-top: 65px;
+}
+.donate-intro h1 {
+  font-size: 67px;
+}
+.donate-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin-top: 45px;
+  align-items: start;
+}
+.donation-visual {
+  position: relative;
+  min-height: 650px;
+  border-radius: 180px 180px 12px 12px;
+  overflow: hidden;
+  border: 1px solid #edc37755;
+  transition: transform 0.2s;
+  box-shadow: 0 30px 70px #0006;
+}
+.donation-visual > img {
+  width: 100%;
+  height: 650px;
+  object-fit: cover;
+  object-position: 72% center;
+}
+.donation-visual > div {
+  position: absolute;
+  inset: auto 0 0;
+  text-align: center;
+  background: linear-gradient(transparent, #1c0b22 40%);
+  padding: 65px 25px 30px;
+}
+.donation-visual h2 {
+  font-size: 45px;
+  color: var(--gold);
+}
+.donation-visual span {
+  font-size: 30px;
+  color: var(--gold);
+}
+.donation-visual p {
+  font-family: "Noto Sans Bengali", sans-serif;
+  font-size: 12px;
+}
+.payment-card {
+  background: linear-gradient(130deg, #3d1d3ce8, #24112ee8);
+  border: 1px solid #edc37755;
+  border-radius: 16px;
+  padding: 35px;
+  backdrop-filter: blur(16px);
+}
+.payment-card h2 {
+  font-size: 38px;
+}
+.payment-card label {
+  display: block;
+  margin: 25px 0 12px;
+  font-size: 12px;
+  color: var(--gold);
+}
+#payment-status {
+  margin: 22px 0;
+  padding: 15px;
+  background: #eac47d12;
+  border-left: 2px solid var(--gold);
+  font-size: 12px;
+  color: #e5cdb3;
+  line-height: 1.8;
+}
+.recipient {
+  display: grid;
+  gap: 7px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+.recipient span {
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+.recipient strong {
+  font-size: 14px;
+  font-weight: 500;
+}
+.recipient code {
+  color: var(--gold);
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+.amount-options {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.amount-options button {
+  flex: 1;
+  border: 1px solid #edc37755;
+  background: #edc3770a;
+  border-radius: 6px;
+  padding: 10px;
+  color: var(--gold);
+}
+.amount-options button.selected {
+  background: var(--gold);
+  color: #241025;
+}
+#amount {
+  width: 100%;
+  background: #14091b77;
+  border: 1px solid #edc37755;
+  border-radius: 6px;
+  padding: 14px;
+  color: var(--text);
+  font: inherit;
+  margin-bottom: 18px;
+}
+#pay-button {
+  width: 100%;
+  margin-bottom: 10px;
+}
+#copy-upi {
+  width: 100%;
+}
+button:disabled,
+input:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none !important;
+}
+.payment-help {
+  font-size: 10px;
+  color: var(--muted);
+  line-height: 1.9;
+  margin-top: 22px;
+}
+#qr-wrap {
+  text-align: center;
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+  margin-top: 24px;
+}
+#qr-wrap img {
+  width: 220px;
+  max-width: 100%;
+  background: white;
+  padding: 12px;
+  border-radius: 8px;
+}
+#qr-wrap p {
+  font-size: 10px;
+  color: var(--muted);
+}
+@keyframes scene-drift {
+  from {
+    transform: scale(1) translateY(-10px);
+  }
+  to {
+    transform: scale(1.06) translateY(10px);
+  }
+}
+@keyframes mandala-depth {
+  from {
+    transform: rotateX(20deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateX(20deg) rotateZ(360deg);
+  }
+}
+@keyframes lamp-sway {
+  from {
+    transform: rotate(-5deg);
+  }
+  to {
+    transform: rotate(5deg);
+  }
+}
+@keyframes petal-rise {
+  from {
+    transform: translate(0, 20px) rotate(-5deg);
+  }
+  to {
+    transform: translate(35px, -100px) rotate(8deg);
+  }
+}
+@keyframes heart-float {
+  50% {
+    transform: translateY(-13px) rotateY(15deg);
+  }
+}
+@keyframes orbit {
+  to {
+    transform: rotateX(55deg) rotateZ(335deg);
+  }
+}
+@media (min-width: 1500px) {
+  .hero-art {
+    background-size:
+      auto,
+      auto,
+      auto 105%;
+  }
+}
+@media (max-width: 1100px) {
+  header {
+    padding-left: 3%;
+    padding-right: 3%;
+    gap: 12px;
+  }
+  nav {
+    gap: 10px;
+    font-size: 10px;
+  }
+  .footer-top {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 35px;
+  }
+  .donation-section {
+    gap: 35px;
+  }
+  .donate-layout {
+    gap: 25px;
+  }
+  .payment-card {
+    padding: 26px;
+  }
+}
+@media (max-width: 700px) {
+  .hero-art {
+    background:
+      linear-gradient(0deg, #1c0b22 0%, #1c0b22ee 48%, transparent 82%),
+      url("assets/hero-kali-four-hands.webp") 66% top/auto 48% no-repeat;
+  }
+  .hero-content {
+    padding-top: 315px;
+  }
+  .hero {
+    min-height: 1030px;
+  }
+  header {
+    padding: 16px 5%;
+  }
+  nav {
+    font-size: 10px;
+    gap: 17px;
+  }
+  .scene-photo {
+    opacity: 0.1;
+  }
+  .scene-mandala {
+    font-size: 360px;
+    right: -140px;
+  }
+  .hanging-lamp {
+    opacity: 0.5;
+  }
+  .lamp-left {
+    left: 3px;
+  }
+  .lamp-right {
+    right: 3px;
+  }
+  .hanging-lamp:before {
+    height: 45px;
+  }
+  .hanging-lamp span {
+    font-size: 30px;
+  }
+  .donation-section {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .donation-art {
+    min-height: 220px;
+  }
+  .donation-heart {
+    font-size: 110px;
+  }
+  .donation-orbit {
+    width: 210px;
+    height: 210px;
+  }
+  .grand-footer {
+    padding: 50px 6% 65px;
+  }
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 20px;
+  }
+  .footer-identity {
+    grid-column: span 2;
+  }
+  .footer-top > div:last-child {
+    grid-column: span 2;
+  }
+  .footer-blessing {
+    font-size: 15px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .donate-intro h1 {
+    font-size: 46px;
+  }
+  .donate-layout {
+    grid-template-columns: 1fr;
+  }
+  .donation-visual {
+    min-height: 360px;
+    border-radius: 110px 110px 12px 12px;
+  }
+  .donation-visual > img {
+    height: 400px;
+  }
+  .donation-visual h2 {
+    font-size: 34px;
+  }
+  .payment-card h2 {
+    font-size: 33px;
+  }
+  .donate-intro {
+    padding-top: 45px;
+  }
+  .donation-visual > div {
+    padding-top: 55px;
+  }
+  .festival-fireworks {
+    opacity: 0.7;
+  }
+  html[lang="bn"] .donate-intro h1 {
+    font-size: 35px;
+  }
+}
+/* V4: each section receives its own festive scene and lighting. */
+.scene-section {
+  --scene-image: url("assets/backgrounds/rangoli.webp");
+  --scene-position: center;
+  --scene-tint: #251029;
+  --scene-strength: 0.65;
+  background: var(--scene-tint);
+}
+#mahavidya {
+  --scene-image: url("assets/backgrounds/gateway.webp");
+  --scene-position: center top;
+  --scene-tint: #10142f;
+  --scene-strength: 0.72;
+}
+#celebration {
+  --scene-image: url("assets/backgrounds/rangoli.webp");
+  --scene-position: center bottom;
+  --scene-tint: #331223;
+  --scene-strength: 0.72;
+}
+#programme {
+  --scene-image: url("assets/backgrounds/gateway.webp");
+  --scene-position: left center;
+  --scene-tint: #25132c;
+  --scene-strength: 0.65;
+}
+#gallery {
+  --scene-image: url("assets/backgrounds/river.webp");
+  --scene-position: center bottom;
+  --scene-tint: #0b252c;
+  --scene-strength: 0.8;
+}
+#past-puja {
+  --scene-image: url("assets/backgrounds/rangoli.webp");
+  --scene-position: right bottom;
+  --scene-tint: #321a20;
+  --scene-strength: 0.7;
+}
+#people {
+  --scene-image: url("assets/backgrounds/gateway.webp");
+  --scene-position: right center;
+  --scene-tint: #151e38;
+  --scene-strength: 0.68;
+}
+#visit {
+  --scene-image: url("assets/backgrounds/river.webp");
+  --scene-position: left center;
+  --scene-tint: #102a2d;
+  --scene-strength: 0.75;
+}
+#donate,
+.donate-intro {
+  --scene-image: url("assets/backgrounds/rangoli.webp");
+  --scene-position: center bottom;
+  --scene-tint: #39152f;
+  --scene-strength: 0.7;
+}
+.closing {
+  --scene-image: url("assets/backgrounds/river.webp");
+  --scene-position: center bottom;
+  --scene-tint: #242036;
+  --scene-strength: 0.8;
+}
+.scene-decoration {
+  background: none;
+}
+.scene-photo {
+  inset: -3%;
+  opacity: var(--scene-strength);
+  background-image:
+    linear-gradient(
+      90deg,
+      var(--scene-tint),
+      transparent 50%,
+      var(--scene-tint)
+    ),
+    linear-gradient(0deg, transparent, #130d29bb 48%, #130d2988),
+    var(--scene-image);
+  background-position: center, center, var(--scene-position);
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: scene-drift 20s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+.scene-photo:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    0deg,
+    var(--scene-tint),
+    transparent 16%,
+    transparent 85%,
+    var(--scene-tint)
+  );
+  opacity: 0.7;
+}
+.scene-mandala {
+  color: #efce8214;
+  font-size: 600px;
+  top: 10%;
+  right: -200px;
+}
+.floating-petals {
+  font-size: 44px;
+  color: #f2b56a66;
+  bottom: 9%;
+  letter-spacing: 100px;
+  text-shadow: 0 0 22px #f1a74360;
+  animation-duration: 13s;
+}
+.hanging-lamp {
+  color: #eac273a6;
+}
+.hanging-lamp i {
+  box-shadow: 0 0 30px 12px #ffad4550;
+}
+.scene-orb {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  filter: blur(45px);
+  background: #f5a54235;
+  animation: orb-float 12s ease-in-out infinite alternate;
+}
+.orb-one {
+  left: -70px;
+  top: 30%;
+}
+.orb-two {
+  right: -50px;
+  bottom: 20%;
+  background: #f563a32b;
+  animation-delay: -5s;
+}
+.section-diyas {
+  position: absolute;
+  bottom: 13px;
+  left: 8%;
+  right: 8%;
+  display: flex;
+  justify-content: space-between;
+  opacity: 0.85;
+}
+.mini-diya {
+  position: relative;
+  width: 35px;
+  height: 12px;
+  border-radius: 4px 4px 80% 80%;
+  background: linear-gradient(#ffdb88, #ad5a26);
+  box-shadow: 0 -5px 25px #ffb75650;
+  animation: lamp-glow 2.5s var(--offset) infinite alternate;
+}
+.mini-diya i {
+  position: absolute;
+  width: 8px;
+  height: 22px;
+  left: 14px;
+  top: -20px;
+  background: linear-gradient(#fff9d1, #ffb43c);
+  border-radius: 80% 5% 70% 30%;
+  transform: rotate(-12deg);
+  box-shadow: 0 0 20px #ffd378;
+  animation: flicker 1.7s var(--offset) infinite alternate;
+}
+.scene-section:not(.scene-visible) .scene-decoration * {
+  animation-play-state: paused;
+}
+.scene-section .eyebrow,
+.scene-section h2,
+.scene-section .section-intro {
+  text-shadow: 0 2px 15px #10071799;
+}
+.events {
+  padding: 8px 20px;
+  border: 1px solid #eac2792b;
+  border-radius: 12px;
+  background: #1a0e22b8;
+  box-shadow: 0 20px 50px #0003;
+  backdrop-filter: blur(7px);
+}
+.events article:first-child {
+  border-top: 0;
+}
+.empty-state {
+  background: #1b1023cc;
+  backdrop-filter: blur(8px);
+}
+.gallery-grid .photo,
+.person {
+  box-shadow: 0 20px 40px #0005;
+}
+.scene-section {
+  border-bottom: 1px solid #edc37722;
+}
+.grand-footer {
+  background:
+    linear-gradient(#14091bec, #14091bf7),
+    url("assets/backgrounds/gateway.webp") center/cover;
+}
+.festival-fireworks {
+  opacity: 0.9;
+}
+@keyframes orb-float {
+  to {
+    transform: translate(45px, -50px) scale(1.3);
+  }
+}
+@media (max-width: 700px) {
+  .scene-photo {
+    opacity: calc(var(--scene-strength) - 0.12);
+  }
+  .scene-mandala {
+    font-size: 380px;
+    right: -200px;
+  }
+  .section-diyas {
+    left: 8%;
+    right: 8%;
+  }
+  .mini-diya:nth-child(even) {
+    display: none;
+  }
+  .events {
+    padding: 0 8px;
+  }
+  .events article {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  .floating-petals {
+    letter-spacing: 40px;
+    font-size: 26px;
+  }
+  .festival-fireworks {
+    opacity: 0.7;
+  }
+  .scene-orb {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scene-decoration * {
+    animation: none !important;
+  }
+}
+
+/* V5: clear scenic images; contrast belongs to the content, not the whole picture. */
+.scene-section .scene-photo {
+  inset: 0;
+  opacity: 1;
+  background-image: linear-gradient(#10091c20, #10091c20), var(--scene-image);
+  background-size:
+    100% 100%,
+    100% auto;
+  background-position:
+    center,
+    center top;
+  background-repeat: no-repeat, repeat-y;
+  filter: none;
+  animation: none;
+  transform: none;
+}
+.scene-section .scene-photo:after {
+  background: linear-gradient(
+    0deg,
+    #160c2533,
+    transparent 12%,
+    transparent 88%,
+    #160c2533
+  );
+  opacity: 1;
+}
+.scene-section .scene-mandala {
+  opacity: 0.3;
+}
+.scene-section .scene-orb {
+  opacity: 0.35;
+}
+.scene-section .section-heading,
+.scene-section > .section-intro,
+.scene-section > .art-disclosure,
+.scene-section > .poster-actions,
+.scene-section > .tabs,
+.scene-section > .group-heading {
+  background: #160d25e8;
+  border: 1px solid #edc37738;
+  border-radius: 12px;
+  padding: 18px 24px;
+  backdrop-filter: none;
+  box-shadow: 0 8px 24px #0003;
+}
+.scene-section > .section-intro,
+.scene-section > .art-disclosure {
+  width: fit-content;
+}
+.scene-section .section-heading {
+  margin-bottom: 24px;
+}
+.scene-section .section-intro,
+.scene-section .art-disclosure {
+  color: #f0e0e5;
+}
+.scene-section .events,
+.scene-section .empty-state {
+  background: #160d25e8;
+  backdrop-filter: none;
+}
+#celebration > div:not(.scene-decoration),
+#visit > div:not(.scene-decoration):not(.map-card),
+#donate > div:not(.scene-decoration):not(.donation-art) {
+  background: #160d25e8;
+  border: 1px solid #edc37738;
+  border-radius: 12px;
+  padding: 28px;
+}
+.scene-section.closing > h2,
+.scene-section.closing > p,
+.scene-section.closing > a {
+  position: relative;
+  background: #160d25e8;
+  box-shadow: 0 0 0 14px #160d25e8;
+  border-radius: 6px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+.grand-footer {
+  background:
+    linear-gradient(#14091bb8, #14091bd9),
+    url("assets/backgrounds/gateway.webp") center/cover;
+}
+@media (max-width: 700px) {
+  .scene-section .scene-photo {
+    opacity: 1;
+    background-size:
+      100% 100%,
+      auto 480px;
+  }
+  .scene-section .section-heading {
+    padding: 18px;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  .scene-section > .section-intro,
+  .scene-section > .art-disclosure,
+  .scene-section > .poster-actions,
+  .scene-section > .tabs,
+  .scene-section > .group-heading {
+    padding: 14px 18px;
+  }
+  #celebration > div:not(.scene-decoration),
+  #visit > div:not(.scene-decoration):not(.map-card),
+  #donate > div:not(.scene-decoration):not(.donation-art) {
+    padding: 22px;
+  }
+}
+
+/* V6: generous type, compact devotional portraits and jewel-toned panels. */
+:root {
+  --muted: #e3ced3;
+  --panel: linear-gradient(125deg, #4d1d35f5, #243942f5);
+}
+body {
+  font-size: 16px;
+}
+header {
+  height: auto;
+  min-height: 105px;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 22px 5%;
+  background:
+    linear-gradient(90deg, #2e142bea, #2e142bc9),
+    url("assets/backgrounds/gateway.webp") center 40% / cover;
+}
+nav {
+  gap: 22px;
+  font-size: 16px;
+  font-weight: 600;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+nav a {
+  white-space: nowrap;
+}
+.brand {
+  font-size: 19px;
+}
+.brand small {
+  font-size: 12px;
+}
+#language {
+  font-size: 14px;
+}
+h2 {
+  font-size: clamp(38px, 4.4vw, 62px);
+}
+.eyebrow {
+  font-size: 13px;
+  letter-spacing: 1.8px;
+}
+.section-intro,
+.intro,
+.story p,
+.events article p,
+.empty-state p,
+.person p,
+.album-heading p {
+  font-size: 16px;
+  line-height: 1.85;
+}
+.intro {
+  max-width: 510px;
+  color: #f4e5e7;
+}
+.events article h3 {
+  font-size: 21px;
+}
+.time strong,
+.time span {
+  font-size: 15px;
+}
+.events article small {
+  font-size: 12px;
+}
+.button,
+.tabs button {
+  font-size: 14px;
+}
+.pill,
+.art-disclosure,
+.registration,
+.hero-location {
+  font-size: 13px;
+}
+.group-heading {
+  font-size: 23px;
+}
+.grand-footer p,
+.footer-top a {
+  font-size: 14px;
+}
+.grand-footer h4 {
+  font-size: 12px;
+}
+.footer-bottom {
+  font-size: 12px;
+}
+.forms-grid {
+  grid-template-columns: repeat(5, minmax(0, 170px));
+  justify-content: center;
+  gap: 24px;
+  max-width: 950px;
+  margin: 35px auto;
+}
+.form-card {
+  border-radius: 72px 72px 12px 12px;
+  background: linear-gradient(145deg, #54283e, #183e46);
+  border-color: #edc37788;
+}
+.form-image {
+  height: 205px;
+  aspect-ratio: auto;
+  background: #20132b;
+}
+.form-image img {
+  object-fit: contain;
+}
+.form-card h3 {
+  font-size: 16px;
+  padding: 15px 12px;
+  line-height: 1.45;
+}
+.scene-section .section-heading,
+.scene-section > .section-intro,
+.scene-section > .art-disclosure,
+.scene-section > .poster-actions,
+.scene-section > .tabs,
+.scene-section > .group-heading,
+.scene-section .events,
+.scene-section .empty-state,
+#celebration > div:not(.scene-decoration),
+#visit > div:not(.scene-decoration):not(.map-card),
+#donate > div:not(.scene-decoration):not(.donation-art) {
+  background: var(--panel);
+  border-color: #e7b86d66;
+  box-shadow:
+    0 12px 32px #10091c44,
+    inset 0 1px #f6dba21a;
+}
+.person,
+.payment-card {
+  background: var(--panel);
+  border-color: #e7b86d66;
+}
+.programme-day {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 28px 0 0;
+  padding: 16px 20px;
+  border-radius: 9px;
+  background: linear-gradient(110deg, #edc377, #d99864);
+  color: #32162c;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.programme-day:first-child {
+  margin-top: 12px;
+}
+.programme-day span {
+  font-size: 14px;
+  font-weight: 500;
+}
+.events article {
+  padding-top: 26px;
+  padding-bottom: 26px;
+}
+.events {
+  padding-bottom: 20px;
+}
+.hero-art {
+  background:
+    linear-gradient(
+      90deg,
+      #1c0b22f2 0%,
+      #1c0b22b8 28%,
+      #1c0b2226 52%,
+      transparent 75%
+    ),
+    linear-gradient(0deg, #1c0b22, transparent 18%),
+    url("assets/hero-kali-four-hands.webp") right center/auto 100% no-repeat;
+}
+.hero-art::after {
+  background: linear-gradient(
+    180deg,
+    #1c0b2222,
+    transparent 12%,
+    transparent 92%,
+    #1c0b22
+  );
+}
+.hero-content h1 {
+  text-shadow: 0 3px 20px #120b26;
+}
+.hero-content .intro {
+  text-shadow: 0 2px 8px #10051b;
+}
+@media (max-width: 1100px) {
+  header {
+    justify-content: center;
+  }
+  nav {
+    order: 3;
+    width: 100%;
+    font-size: 15px;
+    gap: 18px;
+  }
+  .brand {
+    margin-right: auto;
+  }
+  .forms-grid {
+    grid-template-columns: repeat(5, minmax(0, 150px));
+    gap: 15px;
+  }
+  .form-image {
+    height: 185px;
+  }
+}
+@media (max-width: 700px) {
+  body {
+    font-size: 16px;
+  }
+  header {
+    padding: 18px 5%;
+  }
+  nav {
+    font-size: 15px;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow: auto;
+    gap: 22px;
+  }
+  .section {
+    padding: 65px 6%;
+  }
+  .section-intro,
+  .intro,
+  .events article p,
+  .empty-state p {
+    font-size: 15px;
+  }
+  .forms-grid {
+    grid-template-columns: repeat(2, minmax(0, 145px));
+    gap: 18px;
+  }
+  .form-image {
+    height: 175px;
+  }
+  .form-card h3 {
+    font-size: 15px;
+  }
+  .eyebrow {
+    font-size: 11px;
+  }
+  .events article h3 {
+    font-size: 18px;
+  }
+  .time strong,
+  .time span {
+    font-size: 14px;
+  }
+  .programme-day {
+    font-size: 22px;
+    gap: 7px;
+  }
+  .programme-day span {
+    width: 100%;
+    font-size: 13px;
+  }
+  .hero-art {
+    background:
+      linear-gradient(0deg, #1c0b22 0%, #1c0b22f0 50%, transparent 80%),
+      url("assets/hero-kali-four-hands.webp") 68% top/auto 49% no-repeat;
+  }
+  .hero-content {
+    padding-top: 330px;
+  }
+  .hero {
+    min-height: 1080px;
+  }
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+  .footer-identity,
+  .footer-top > div:last-child {
+    grid-column: auto;
+  }
+}
+
+#schedule-notice {
+  font-size: 16px;
+  line-height: 1.85;
+  background: var(--panel);
+  padding: 18px 24px;
+  border: 1px solid #e7b86d66;
+  border-radius: 12px;
+  color: #f2e5e5;
+}
+html[lang="bn"] .section h2 {
+  font-size: 44px;
+  line-height: 1.4;
+}
+@media (max-width: 700px) {
+  html[lang="bn"] .section h2 {
+    font-size: 32px;
+  }
+  #schedule-notice {
+    font-size: 15px;
+  }
+}
+
+/* V7: club identity takes centre stage; complete four-hand devotional artwork. */
+.hero-content {
+  max-width: 710px;
+  padding-top: 65px;
+}
+.hero-content .club-title {
+  font-family: "Cormorant Garamond", "Noto Sans Bengali", serif;
+  font-size: clamp(48px, 5.4vw, 78px);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -1px;
+  color: #ffe2a0;
+  text-shadow:
+    0 3px 2px #43233c,
+    0 8px 30px #120719;
+}
+.club-title span {
+  color: #fff2d9;
+}
+.jubilee-tagline {
+  color: var(--gold);
+  font-size: 20px;
+  line-height: 1.6;
+  margin: 22px 0 0;
+  font-weight: 500;
+}
+.hero-content .intro {
+  margin-top: 16px;
+}
+.brand small {
+  font-size: 15px;
+  color: #ffe0a0;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+.brand {
+  font-weight: 700;
+}
+.bengali-greeting {
+  margin-top: 19px;
+  font-size: 16px;
+}
+html[lang="bn"] .hero-content .club-title {
+  font-size: clamp(44px, 4.6vw, 65px);
+  line-height: 1.23;
+}
+@media (max-width: 700px) {
+  .hero-content {
+    padding-top: 340px;
+    padding-right: 6%;
+    max-width: 100%;
+  }
+  .hero-content .club-title {
+    font-size: 48px;
+  }
+  .jubilee-tagline {
+    font-size: 17px;
+  }
+  .brand small {
+    font-size: 13px;
+  }
+  .hero {
+    min-height: 1130px;
+  }
+  html[lang="bn"] .hero-content .club-title {
+    font-size: 43px;
+  }
+  .hero-art {
+    background:
+      linear-gradient(0deg, #1c0b22 0%, #1c0b22f0 52%, transparent 83%),
+      url("assets/hero-kali-four-hands.webp") 72% top/auto 460px no-repeat;
+  }
+}
+
+/* V9: dismissible bilingual platinum-jubilee welcome poster. */
+body.welcome-open {
+  overflow: hidden;
+}
+#jubilee-welcome {
+  width: min(620px, calc(100vw - 28px));
+  max-width: 620px;
+  max-height: calc(100dvh - 28px);
+  padding: 0;
+  overflow: auto;
+  border: 1px solid #ffe0a0;
+  border-radius: 22px;
+  box-shadow:
+    0 30px 100px #000b,
+    0 0 50px #f7bc5c33;
+  color: #fff4dc;
+  background: #291029;
+}
+#jubilee-welcome::backdrop {
+  background: #080414b8;
+  backdrop-filter: blur(7px);
+}
+.welcome-poster {
+  padding: 42px 34px 26px;
+  text-align: center;
+  background:
+    linear-gradient(#1a0b27b0, #2f1026da),
+    url("assets/backgrounds/gateway.webp") center/cover;
+  border: 7px double #edc37770;
+  border-radius: 21px;
+}
+.welcome-close {
+  position: absolute;
+  right: 13px;
+  top: 12px;
+  z-index: 2;
+  border: 1px solid #edc37799;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  line-height: 1;
+  background: #271327;
+  color: #ffe4ae;
+  font-size: 28px;
+}
+.welcome-kicker {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  padding: 0 22px;
+}
+.welcome-bengali {
+  font-family: "Noto Sans Bengali", sans-serif;
+  font-size: 18px;
+  color: #ffdda0;
+}
+.welcome-seal {
+  width: 150px;
+  height: 150px;
+  margin: 20px auto 14px;
+  border: 1px solid #ffe1a5;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: radial-gradient(circle, #72422e, #36172d 75%);
+  box-shadow:
+    inset 0 0 0 6px #edc37726,
+    0 0 40px #edc37736;
+}
+.welcome-seal span {
+  font:
+    700 90px/0.95 "Cormorant Garamond",
+    serif;
+  color: #ffe1a5;
+  text-shadow: 2px 4px #5e3040;
+}
+.welcome-seal small {
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-top: 7px;
+}
+#welcome-title {
+  font-size: 54px;
+  color: #ffe1a5;
+  line-height: 1.1;
+}
+.welcome-subtitle {
+  font-size: 17px;
+  color: #ffe1a5;
+}
+#welcome-description {
+  font-size: 15px;
+  line-height: 1.9;
+  margin: 15px 0;
+}
+.welcome-dates {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-top: 1px solid #edc37755;
+  border-bottom: 1px solid #edc37755;
+  padding: 12px 0 !important;
+  margin: 16px 0 !important;
+}
+.welcome-dates span {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.welcome-lamps {
+  font-size: 25px;
+  color: #edc377;
+  margin: 12px 0;
+}
+.welcome-enter {
+  width: 100%;
+  font-size: 14px;
+}
+.welcome-footnote {
+  font-size: 12px;
+  color: #ead4cd;
+  margin-top: 12px !important;
+}
+@media (max-width: 600px) {
+  .welcome-poster {
+    padding: 46px 18px 20px;
+  }
+  .welcome-kicker {
+    font-size: 11px;
+    padding: 0 12px;
+  }
+  .welcome-bengali {
+    font-size: 16px;
+  }
+  .welcome-seal {
+    width: 120px;
+    height: 120px;
+    margin: 15px auto;
+  }
+  .welcome-seal span {
+    font-size: 72px;
+  }
+  #welcome-title {
+    font-size: 42px;
+  }
+  #welcome-description {
+    font-size: 13px;
+  }
+  .welcome-subtitle {
+    font-size: 14px;
+  }
+  .welcome-enter {
+    font-size: 12px;
+    padding: 12px 8px;
+  }
+}
+
+/* V10: compact welcome poster. */
+#jubilee-welcome {
+  width: min(460px, calc(100vw - 28px));
+  max-width: 460px;
+  border-radius: 18px;
+}
+.welcome-poster {
+  padding: 30px 24px 18px;
+  border-radius: 17px;
+}
+.welcome-kicker {
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 0 18px;
+}
+.welcome-bengali {
+  font-size: 15px;
+}
+.welcome-seal {
+  width: 100px;
+  height: 100px;
+  margin: 12px auto 10px;
+}
+.welcome-seal span {
+  font-size: 62px;
+}
+.welcome-seal small {
+  font-size: 9px;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+#welcome-title {
+  font-size: 39px;
+}
+.welcome-subtitle {
+  font-size: 14px;
+}
+#welcome-description {
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 10px 0;
+}
+.welcome-dates {
+  font-size: 14px;
+  padding: 8px 0 !important;
+  margin: 10px 0 !important;
+}
+.welcome-dates span {
+  font-size: 12px;
+}
+.welcome-lamps {
+  font-size: 20px;
+  margin: 8px 0;
+}
+.welcome-enter {
+  font-size: 12px;
+  padding: 10px 8px;
+}
+.welcome-footnote {
+  font-size: 10px;
+  margin-top: 8px !important;
+}
+.welcome-close {
+  width: 34px;
+  height: 34px;
+  font-size: 25px;
+  right: 10px;
+  top: 10px;
+}
+@media (max-width: 600px) {
+  .welcome-poster {
+    padding: 35px 16px 16px;
+  }
+  .welcome-kicker {
+    font-size: 10px;
+  }
+  #welcome-title {
+    font-size: 35px;
+  }
+  .welcome-bengali {
+    font-size: 14px;
+  }
+}
